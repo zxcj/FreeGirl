@@ -1,0 +1,17 @@
+animation UI_click
+{
+    frameCount = 120
+
+    startTime = 0
+
+    stopTime = 4000
+
+    clip Default
+    {
+        begin = 0
+        end = 120
+        repeatCount = 1
+    }
+
+}
+

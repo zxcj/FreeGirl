@@ -1,0 +1,83 @@
+material textured
+{
+    sampler u_diffuseTexture
+    {
+        mipmap = false
+        wrapS = CLAMP
+        wrapT = CLAMP
+        minFilter = LINEAR
+        magFilter = LINEAR
+    }
+
+    technique
+    {
+        pass 
+        {
+            vertexShader = shaders/textured.vert
+            fragmentShader = shaders/textured.frag
+
+            u_inverseTransposeWorldViewMatrix = INVERSE_TRANSPOSE_WORLD_VIEW_MATRIX
+            u_worldViewProjectionMatrix = WORLD_VIEW_PROJECTION_MATRIX
+            
+            renderState
+            {
+                blend = true
+                blendDst = ONE_MINUS_SRC_ALPHA
+                blendSrc = SRC_ALPHA
+                cullFace = true
+                cullFaceSide = BACK
+                depthTest = true
+            }
+            
+        }
+    }
+}
+
+material 17___Default : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = Freegirl.fbm/heibian.png
+    }
+
+    technique
+    {
+        pass 
+        {
+            defines = DIRECTIONAL_LIGHT_COUNT 1
+        }
+    }
+}
+
+material lambert3 : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = Freegirl.fbm/btn_lingqu.png
+    }
+
+    technique
+    {
+        pass 
+        {
+            defines = DIRECTIONAL_LIGHT_COUNT 1;VERTEX_COLOR
+        }
+    }
+}
+
+material lambert4 : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = Freegirl.fbm/long.png
+    }
+
+    technique
+    {
+        pass 
+        {
+            defines = DIRECTIONAL_LIGHT_COUNT 1
+        }
+    }
+}
+

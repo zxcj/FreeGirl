@@ -1,0 +1,36 @@
+scene
+{
+    path = Freegirl.gpb
+
+    showDefaultLight = false
+    ambientColor = 1.0, 1.0, 1.0
+
+    modelSize = 70.0
+    modelScale = 1.0
+
+    node UI_click
+    { 
+        enabled=false
+    }
+    node Video
+    {
+        static=true
+        scale = 1.6,1,1
+    }
+    node group_heibian
+    {
+        //enabled=false
+    }
+    node heibian1
+    {
+        oneBoundMin=0,0,0
+        oneBoundMax=0.1,0.1,0.1
+    }
+    node heibian2
+    {
+        enabled=false
+        oneBoundMin=0,0,0
+        oneBoundMax=0.1,0.1,0.1
+    }
+
+}
